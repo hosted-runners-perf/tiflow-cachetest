@@ -1,4 +1,4 @@
-name: Check & Build
+name: Check & Build Cached
 
 on:
   workflow_dispatch:
@@ -38,13 +38,7 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: 1.19
-
-      - name: Cache Tools
-        id: cache-tools
-        uses: actions/cache@v2
-        with:
-          path: tools/bin
-          key: macos-latest-ticdc-tools-${{ hashFiles('tools/check/go.sum') }}
+          cache: true
 
       - name: Build
         run: make build
