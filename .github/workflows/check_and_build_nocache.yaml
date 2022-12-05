@@ -2,8 +2,8 @@ name: Check & Build No Cache
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "*/30 * * * *"
+  # schedule:
+    # - cron: "*/30 * * * *"
 
 jobs:
   mac_build:
